@@ -1,7 +1,6 @@
 include(FetchContent)
 
-find_program(_make_tool "make" REQUIRED)
-
+find_program(_make_tool NAMES mingw32-make HINTS /mingw64/bin)
 function(download_mingw_sdl2 _sdl2_version _sdl2_ttf_version _sdl2_image_version)
 
     if(CMAKE_SIZEOF_VOID_P EQUAL 4)
